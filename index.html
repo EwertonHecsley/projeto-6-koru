@@ -1,51 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Debug & Beauty - Assistente IA.</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>
-        <img
-          src="ChatGPT Image 9_08_2025, 21_52_48.png"
-          alt="Bússola"
-          class="robot"
-        />
-        <span style="color: var(--accent)">Debug Beauty IA</span>
-      </h1>
-    </header>
 
-    <div class="container">
-      <div class="label">API do Google Gemini:</div>
-      <input
-        class="api-key"
-        placeholder="Cole sua chave de API aqui"
-        id="apiKey"
-      />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debug & Beauty - Assistente IA.</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-      <main id="chat">
-        <div class="mensagem ia">
-          Olá! Sou sua Inteligência Artificial. Como posso ajudar hoje?
-        </div>
-      </main>
+<body>
+  <header>
+    <h1>
+      <img src="ChatGPT Image 9_08_2025, 21_52_48.png" alt="Bússola" class="robot" />
+      <span style="color: var(--accent)">Debug Beauty IA</span>
+    </h1>
+  </header>
 
-      <form class="chat-input" onsubmit="return false;">
-        <input
-          type="text"
-          placeholder="Faça a sua pergunta"
-          id="userQuestion"
-        />
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+  <div class="container">
+    <div class="label">API do Google Gemini:</div>
+    <input class="api-key" placeholder="Cole sua chave de API aqui" id="apiKey" />
 
-    <footer>
-      <p>© 2025 Debug & Beauty - Projeto Koru</p>
-    </footer>
+    <main id="chat">
+      <div class="mensagem ia">
+        Olá! Sou sua Inteligência Artificial. Como posso ajudar hoje?
+      </div>
+    </main>
 
-    <script src="script.js"></script>
-  </body>
+    <form class="chat-input" onsubmit="return false;">
+      <input type="text" placeholder="Faça a sua pergunta" id="userQuestion" />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 Debug & Beauty - Projeto Koru</p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
 </html>

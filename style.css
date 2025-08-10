@@ -26,15 +26,15 @@ body {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
   color: var(--text);
-  background: radial-gradient(
-      1200px 800px at 10% -10%,
+  background: radial-gradient(1200px 800px at 10% -10%,
       #183257 0%,
-      transparent 60%
-    ),
+      transparent 60%),
     radial-gradient(1000px 700px at 110% 20%, #0e2b3f 0%, transparent 60%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
   background-attachment: fixed;
   line-height: 1.6;
+  position: relative;
+  z-index: 0;
 }
 
 header {
@@ -42,11 +42,9 @@ header {
   top: 0;
   z-index: 10;
   backdrop-filter: saturate(140%) blur(10px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0));
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -102,21 +100,17 @@ main#chat {
 
 .mensagem.ia {
   align-self: flex-start;
-  background: linear-gradient(
-    180deg,
-    rgba(76, 201, 240, 0.18),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(180deg,
+      rgba(76, 201, 240, 0.18),
+      rgba(255, 255, 255, 0.05));
   border-left: 3px solid var(--accent);
 }
 
 .mensagem.user {
   align-self: flex-end;
-  background: linear-gradient(
-    180deg,
-    rgba(58, 134, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(180deg,
+      rgba(58, 134, 255, 0.2),
+      rgba(255, 255, 255, 0.05));
   border-right: 3px solid var(--accent-2);
 }
 
@@ -219,15 +213,9 @@ footer {
   color: var(--muted);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: saturate(120%) blur(6px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0)
-  );
-}
-body {
-  position: relative;
-  z-index: 0;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0));
 }
 
 body::before {
