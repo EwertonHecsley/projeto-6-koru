@@ -1,46 +1,53 @@
 :root {
   --bg: #0b1220;
-  --bg-alt: #111a2e;
-  --surface: rgba(255, 255, 255, .06);
-  --surface-strong: rgba(255, 255, 255, .1);
+  --bg-alt: #6a994e;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.1);
   --text: #e6f1ff;
   --muted: #9fb3c8;
   --accent: #4cc9f0;
   --accent-2: #3a86ff;
   --ring: #7dd3fc;
-  --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   --radius: 16px;
 }
-
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(1200px 800px at 10% -10%, #183257 0%, transparent 60%),
+  background: radial-gradient(
+      1200px 800px at 10% -10%,
+      #183257 0%,
+      transparent 60%
+    ),
     radial-gradient(1000px 700px at 110% 20%, #0e2b3f 0%, transparent 60%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
   background-attachment: fixed;
   line-height: 1.6;
 }
 
-
 header {
   position: sticky;
   top: 0;
   z-index: 10;
   backdrop-filter: saturate(140%) blur(10px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0));
-  border-bottom: 1px solid rgba(255, 255, 255, .08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 header h1 {
@@ -49,14 +56,18 @@ header h1 {
   padding: 20px clamp(16px, 4vw, 24px);
   font-size: clamp(1.2rem, 1.2rem + 1.2vw, 2rem);
   font-weight: 700;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 header .robot {
-  filter: drop-shadow(0 2px 8px rgba(76, 201, 240, .35));
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 2px 8px rgba(76, 201, 240, 0.35));
+  object-fit: contain;
+  vertical-align: middle;
 }
 
 .container {
@@ -65,11 +76,10 @@ header .robot {
   padding: 0 clamp(16px, 4vw, 24px);
 }
 
-
 main#chat {
   margin-top: 16px;
   background: var(--surface);
-  border: 1px solid rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   min-height: 42vh;
@@ -80,33 +90,40 @@ main#chat {
   overflow: auto;
 }
 
-
 .mensagem {
   max-width: 80%;
   padding: 12px 14px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, .08);
-  background: rgba(255, 255, 255, .05);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
-  animation: bubbleIn .18s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  animation: bubbleIn 0.18s ease-out;
 }
 
 .mensagem.ia {
   align-self: flex-start;
-  background: linear-gradient(180deg, rgba(76, 201, 240, .18), rgba(255, 255, 255, .05));
+  background: linear-gradient(
+    180deg,
+    rgba(76, 201, 240, 0.18),
+    rgba(255, 255, 255, 0.05)
+  );
   border-left: 3px solid var(--accent);
 }
 
 .mensagem.user {
   align-self: flex-end;
-  background: linear-gradient(180deg, rgba(58, 134, 255, .2), rgba(255, 255, 255, .05));
+  background: linear-gradient(
+    180deg,
+    rgba(58, 134, 255, 0.2),
+    rgba(255, 255, 255, 0.05)
+  );
   border-right: 3px solid var(--accent-2);
 }
 
 @keyframes bubbleIn {
   from {
     transform: translateY(4px);
-    opacity: .6;
+    opacity: 0.6;
   }
 
   to {
@@ -115,22 +132,22 @@ main#chat {
   }
 }
 
-
 .label {
   color: var(--muted);
-  font-size: .9rem;
+  font-size: 0.9rem;
   margin: 4px 0 8px;
 }
 
-.api-key, .chat-input input {
+.api-key,
+.chat-input input {
   width: 100%;
   padding: 14px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .12);
-  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text);
   outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .api-key::placeholder,
@@ -141,8 +158,8 @@ main#chat {
 .api-key:focus,
 .chat-input input:focus {
   border-color: var(--ring);
-  box-shadow: 0 0 0 4px rgba(125, 211, 252, .15);
-  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.15);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .chat-input {
@@ -156,14 +173,14 @@ main#chat {
 .chat-input button {
   padding: 12px 18px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   background: linear-gradient(180deg, var(--accent), var(--accent-2));
   color: #031022;
   font-weight: 700;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   cursor: pointer;
-  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
-  box-shadow: 0 8px 22px rgba(58, 134, 255, .32);
+  transition: transform 0.06s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 22px rgba(58, 134, 255, 0.32);
 }
 
 .chat-input button:hover {
@@ -176,7 +193,8 @@ main#chat {
 
 .chat-input button:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(125, 211, 252, .25), 0 8px 22px rgba(58, 134, 255, .32);
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.25),
+    0 8px 22px rgba(58, 134, 255, 0.32);
 }
 
 main#chat::-webkit-scrollbar {
@@ -190,7 +208,7 @@ main#chat::-webkit-scrollbar-thumb {
 }
 
 main#chat::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, .06);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 8px;
 }
 
@@ -199,7 +217,30 @@ footer {
   padding: 24px 16px 40px;
   text-align: center;
   color: var(--muted);
-  border-top: 1px solid rgba(255, 255, 255, .08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: saturate(120%) blur(6px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+body {
+  position: relative;
+  z-index: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("ChatGPT Image 9_08_2025, 21_52_48.png") no-repeat center;
+  background-size: contain;
+  background-position: center calc(50% + 47px);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: -1;
 }
