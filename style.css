@@ -72,6 +72,25 @@ header .robot {
   max-width: 960px;
   margin: 28px auto;
   padding: 0 clamp(16px, 4vw, 24px);
+  position: relative;
+}
+
+.chat-actions {
+  position: absolute; 
+  bottom: 4rem;       
+  right: 30px;       
+}
+
+.chat-actions button {
+  background: none; 
+  border: none;  
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 12px; 
+}
+
+.chat-actions button:hover {
+ opacity: 0.7;
 }
 
 main#chat {
