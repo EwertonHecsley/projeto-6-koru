@@ -96,6 +96,32 @@ main#chat {
   background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   animation: bubbleIn 0.18s ease-out;
+  position: relative;
+  padding-right: 40px;
+}
+
+.message-actions button {
+ background: none;
+ border: none;
+ font-size: 0.7rem;
+ cursor: pointer;
+ padding: 5px;
+}
+
+.message-actions button:hover {
+ opacity: 0.7;
+}
+
+.copy-btn {
+ position: absolute;
+ top: 5px;
+ right: 5px; 
+}
+
+.delete-btn {
+ position: absolute;
+ bottom: 5px;
+ right: 5px;
 }
 
 .mensagem.ia {
@@ -104,6 +130,7 @@ main#chat {
       rgba(76, 201, 240, 0.18),
       rgba(255, 255, 255, 0.05));
   border-left: 3px solid var(--accent);
+  text-align: justify;
 }
 
 .mensagem.user {
