@@ -72,11 +72,11 @@ form.addEventListener("submit", async () => {
     const question = userQuestionInput.value.trim();
 
     if (!apiKey) {
-        alert("Por favor, insira sua chave de API do Gemini.");
+        showAlert("Por favor, insira sua chave de API do Gemini.");
         return;
     }
     if (!question) {
-        alert("Digite uma pergunta antes de enviar.");
+        showAlert("Digite uma pergunta antes de enviar.");
         return;
     }
 
@@ -90,3 +90,17 @@ form.addEventListener("submit", async () => {
     removeLoading();
     addMessage(answer, "ia");
 });
+
+function showAlert(message, type = "success") {
+    const alertBox = document.getElementById("customAlert");
+    alertBox.textContent = message;
+    alertBox.className = `alert ${type} show`;
+
+    setTimeout(() => {
+        alertBox.classList.remove("show");
+        setTimeout(() => {
+            alertBox.classList.add("hidden");
+        }, 300);
+    }, 3000);
+}
+

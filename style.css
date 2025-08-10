@@ -232,3 +232,68 @@ body::before {
   pointer-events: none;
   z-index: -1;
 }
+
+.alert {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  min-width: 300px;
+  max-width: 400px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.alert.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  animation: shake 0.3s ease-in-out;
+}
+
+.alert.error {
+  background-color: rgba(255, 77, 77, 0.9);
+  color: white;
+}
+
+.alert.success {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+}
+
+.alert.warning {
+  background-color: rgba(255, 152, 0, 0.9);
+  color: white;
+}
+
+.alert.hidden {
+  display: none;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  25% {
+    transform: translateX(calc(-50% - 5px)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  75% {
+    transform: translateX(calc(-50% + 5px)) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
