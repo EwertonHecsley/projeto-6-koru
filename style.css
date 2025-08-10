@@ -26,15 +26,15 @@ body {
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
   color: var(--text);
-  background: radial-gradient(
-      1200px 800px at 10% -10%,
+  background: radial-gradient(1200px 800px at 10% -10%,
       #183257 0%,
-      transparent 60%
-    ),
+      transparent 60%),
     radial-gradient(1000px 700px at 110% 20%, #0e2b3f 0%, transparent 60%),
     linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
   background-attachment: fixed;
   line-height: 1.6;
+  position: relative;
+  z-index: 0;
 }
 
 header {
@@ -42,11 +42,9 @@ header {
   top: 0;
   z-index: 10;
   backdrop-filter: saturate(140%) blur(10px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0));
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -102,21 +100,17 @@ main#chat {
 
 .mensagem.ia {
   align-self: flex-start;
-  background: linear-gradient(
-    180deg,
-    rgba(76, 201, 240, 0.18),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(180deg,
+      rgba(76, 201, 240, 0.18),
+      rgba(255, 255, 255, 0.05));
   border-left: 3px solid var(--accent);
 }
 
 .mensagem.user {
   align-self: flex-end;
-  background: linear-gradient(
-    180deg,
-    rgba(58, 134, 255, 0.2),
-    rgba(255, 255, 255, 0.05)
-  );
+  background: linear-gradient(180deg,
+      rgba(58, 134, 255, 0.2),
+      rgba(255, 255, 255, 0.05));
   border-right: 3px solid var(--accent-2);
 }
 
@@ -219,15 +213,9 @@ footer {
   color: var(--muted);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: saturate(120%) blur(6px);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.03),
-    rgba(255, 255, 255, 0)
-  );
-}
-body {
-  position: relative;
-  z-index: 0;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.03),
+      rgba(255, 255, 255, 0));
 }
 
 body::before {
@@ -243,4 +231,69 @@ body::before {
   opacity: 0.1;
   pointer-events: none;
   z-index: -1;
+}
+
+.alert {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  min-width: 300px;
+  max-width: 400px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.alert.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  animation: shake 0.3s ease-in-out;
+}
+
+.alert.error {
+  background-color: rgba(255, 77, 77, 0.9);
+  color: white;
+}
+
+.alert.success {
+  background-color: rgba(76, 175, 80, 0.9);
+  color: white;
+}
+
+.alert.warning {
+  background-color: rgba(255, 152, 0, 0.9);
+  color: white;
+}
+
+.alert.hidden {
+  display: none;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  25% {
+    transform: translateX(calc(-50% - 5px)) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  75% {
+    transform: translateX(calc(-50% + 5px)) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
 }
