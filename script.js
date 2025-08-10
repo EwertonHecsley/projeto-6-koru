@@ -1,4 +1,5 @@
 const apiKeyInput = document.getElementById("apiKey");
+apiKeyInput.type = 'password'
 const userQuestionInput = document.getElementById("userQuestion");
 const chat = document.getElementById("chat");
 const form = document.querySelector(".chat-input");
