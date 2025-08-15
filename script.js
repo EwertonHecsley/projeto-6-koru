@@ -44,9 +44,11 @@ function addMessage(message) {
     deleteBtn.title = "Apagar mensagem";
     deleteBtn.textContent = "🗑️";
     deleteBtn.addEventListener("click", () => {
-        msgDiv.remove();
-        chatHistory = chatHistory.filter(msg => msg.id !== message.id);
-        saveHistory();
+        if (confirm("Você tem certeza que deseja apagar esta mensagem?")) {
+            msgDiv.remove();
+            chatHistory = chatHistory.filter(msg => msg.id !== message.id);
+            saveHistory();
+        }
     });
     actionsDiv.appendChild(deleteBtn);
 
@@ -171,10 +173,12 @@ function createClearButton() {
         clearChatBtn.textContent = "🧹";
 
         clearChatBtn.addEventListener("click", () => {
-            chatHistory = [];
-            saveHistory();
-            renderChat();
-            showAlert("O histórico do chat foi limpo!");
+            if (confirm("Você tem certeza que deseja limpar todo o histórico do chat? Esta ação não pode ser desfeita.")) {
+                chatHistory = [];
+                saveHistory();
+                renderChat();
+                showAlert("O histórico do chat foi limpo!");
+            }
         });
 
         chatActionsContainer.appendChild(clearChatBtn);
