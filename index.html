@@ -16,29 +16,30 @@
     </h1>
   </header>
 
-  <div class="container">
-    <div class="label">API do Google Gemini:</div>
-    <input class="api-key" placeholder="Cole sua chave de API aqui" id="apiKey" />
+  <main>
+    <div class="container">
+      <div class="label">API do Google Gemini:</div>
+      <input class="api-key" placeholder="Cole sua chave de API aqui" id="apiKey" />
 
-    <main id="chat">
-      <div class="mensagem ia">
-        Olá! Sou sua Inteligência Artificial. Como posso ajudar hoje?
-      </div>
-    </main>
-
-    <div class="chat-actions"></div>
-
-    <form class="chat-input" onsubmit="return false;">
-      <div class="input-wrapper">
-        <input type="text" placeholder="Faça a sua pergunta" id="userQuestion" />
-        <div class="char-counter">
-          <span id="charCounter">0</span> / 5000
+      <section id="chat">
+        <div class="mensagem ia">
+          Olá! Sou sua Inteligência Artificial. Como posso ajudar hoje?
         </div>
-      </div>
-      <button type="submit">Enviar</button>
-  </div>
-  </form>
-  </div>
+      </section>
+
+      <div class="chat-actions"></div>
+
+      <form class="chat-input" onsubmit="return false;">
+        <div class="input-wrapper">
+          <input type="text" placeholder="Faça a sua pergunta" id="userQuestion" />
+          <div class="char-counter">
+            <span id="charCounter">0</span> / 5000
+          </div>
+        </div>
+        <button type="submit">Enviar</button>   
+    </form>
+    </div>
+  </main>
 
   <footer>
     <p>© 2025 Debug & Beauty - Projeto Koru</p>
