@@ -188,3 +188,24 @@ function createClearButton() {
 apiKeyInput.value = localStorage.getItem("geminiApiKey") || "";
 renderChat();
 createClearButton();
+
+
+const charCounterElement = document.getElementById("charCounter");
+const maxChars = 5000; 
+
+function updateCharCounter() {
+    const currentLength = userQuestionInput.value.length; 
+    charCounterElement.textContent = currentLength; 
+      
+    if (currentLength > maxChars) {
+        charCounterElement.style.color = "red"; 
+    } else {
+        charCounterElement.style.color = "";     }
+}
+userQuestionInput.addEventListener("input", updateCharCounter);
+
+form.addEventListener("submit", (event) => {
+    setTimeout(updateCharCounter, 0); 
+});
+
+

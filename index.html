@@ -29,9 +29,15 @@
     <div class="chat-actions"></div>
 
     <form class="chat-input" onsubmit="return false;">
-      <input type="text" placeholder="Faça a sua pergunta" id="userQuestion" />
+      <div class="input-wrapper">
+        <input type="text" placeholder="Faça a sua pergunta" id="userQuestion" />
+        <div class="char-counter">
+          <span id="charCounter">0</span> / 5000
+        </div>
+      </div>
       <button type="submit">Enviar</button>
-    </form>
+  </div>
+  </form>
   </div>
 
   <footer>
