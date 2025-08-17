@@ -79,7 +79,7 @@ main {
 
 .chat-actions {
   position: absolute; 
-  bottom: 4rem;       
+  bottom: 7rem;       
   right: 30px;       
 }
 
@@ -119,6 +119,7 @@ main {
   animation: bubbleIn 0.18s ease-out;
   position: relative;
   padding-right: 40px;
+  margin-bottom: 1rem;
 }
 
 .message-actions button {
@@ -364,4 +365,11 @@ body::before {
   100% {
     transform: translateX(-50%) translateY(0);
   }
+}
+ 
+#toggleTheme {
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer; 
 }
