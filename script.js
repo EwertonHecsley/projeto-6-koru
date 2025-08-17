@@ -214,15 +214,27 @@ toggleThemeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 
   if (document.body.classList.contains("dark")) {
-    toggleThemeBtn.textContent = "☀️ Modo Claro";
+    toggleThemeBtn.textContent = "☀️";
   } else {
-    toggleThemeBtn.textContent = "🌙 Modo Escuro";
+    toggleThemeBtn.textContent = "🌙";
   }
 });
 
 
 const btnSalvar = document.getElementById("btnSalvar");
 btnSalvar.addEventListener("click", () => {
+const userMessageExists = document.querySelector("#chat .mensagem.user");
+
+    if (!userMessageExists) {
+    showAlert("É preciso ter um histórico de conversa para salvar o PDF.", "error");
+    return; 
+  }
+
+  const isDarkMode = document.body.classList.contains('dark');
+  const themeClass = isDarkMode ? 'pdf-export-dark' : 'pdf-export-light';
+
+   document.body.classList.add('pdf-export', themeClass);
+  
   const element = document.querySelector("main"); // o conteúdo principal
 
   const opt = {
@@ -233,7 +245,15 @@ btnSalvar.addEventListener("click", () => {
     jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
   };
 
-  html2pdf().set(opt).from(element).save();
+  html2pdf().set(opt).from(element).save().then(() => {
+      document.body.classList.remove('pdf-export', themeClass);
+        showAlert("PDF gerado com sucesso!", "success");
+    }).catch((err) => {       
+        document.body.classList.remove('pdf-export', themeClass);
+        showAlert("Ocorreu um erro ao gerar o PDF.", "error");
+        console.error(err);
+    });
 });
+
 
 

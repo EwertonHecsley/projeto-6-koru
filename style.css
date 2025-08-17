@@ -26,7 +26,6 @@ body.dark {
 }
 
 
-
 * {
   box-sizing: border-box;
 }
@@ -227,7 +226,7 @@ main {
 
 .api-key::placeholder,
 .chat-input input::placeholder {
-  color: #9fb3c8b0;
+  color: #555555;
 }
 
 .api-key:focus,
@@ -401,7 +400,29 @@ body::before {
  
 #toggleTheme {
   background-color: transparent;
+  background: none;
   font-size: 1.5rem;
   border: none;
   cursor: pointer; 
 }
+
+body.pdf-export .header,
+body.pdf-export footer,
+body.pdf-export .chat-input,
+body.pdf-export .api-key,
+body.pdf-export .chat-actions,
+body.pdf-export #toggleTheme,
+body.pdf-export .message-actions {
+  display: none !important;
+}
+
+body.pdf-export .mensagem {
+  box-shadow: none !important;
+}
+
+body.pdf-export-light, .pdf-export-dark .mensagem {
+  background-color: #f1f1f1 !important;
+  color: #000000 !important;
+  border: 1px solid #cccccc !important;
+}
+
