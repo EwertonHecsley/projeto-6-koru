@@ -209,3 +209,31 @@ form.addEventListener("submit", (event) => {
 });
 
 
+const toggleThemeBtn = document.getElementById("toggleTheme");
+toggleThemeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    toggleThemeBtn.textContent = "☀️ Modo Claro";
+  } else {
+    toggleThemeBtn.textContent = "🌙 Modo Escuro";
+  }
+});
+
+
+const btnSalvar = document.getElementById("btnSalvar");
+btnSalvar.addEventListener("click", () => {
+  const element = document.querySelector("main"); // o conteúdo principal
+
+  const opt = {
+    margin:       0.5,
+    filename:     'debug-beauty-chat.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2 },
+    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+  };
+
+  html2pdf().set(opt).from(element).save();
+});
+
+

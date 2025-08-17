@@ -1,4 +1,18 @@
 :root {
+  --bg: #f5f5f5;
+  --bg-alt: #e1e1e1;
+  --surface: rgba(0, 0, 0, 0.05);
+  --surface-strong: rgba(0, 0, 0, 0.08);
+  --text: #111111;
+  --muted: #555555;
+  --accent: #4cc9f0;
+  --accent-2: #3a86ff;
+  --ring: #3a86ff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+}
+
+body.dark {
   --bg: #0b1220;
   --bg-alt: #6a994e;
   --surface: rgba(255, 255, 255, 0.06);
@@ -9,8 +23,9 @@
   --accent-2: #3a86ff;
   --ring: #7dd3fc;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-  --radius: 16px;
 }
+
+
 
 * {
   box-sizing: border-box;
@@ -64,6 +79,23 @@ header .robot {
   filter: drop-shadow(0 2px 8px rgba(76, 201, 240, 0.35));
   object-fit: contain;
   vertical-align: middle;
+}
+
+.btn {
+  background: linear-gradient(90deg, #2196f3, #00bcd4);
+  border: none;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2,5px 5px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 main {
